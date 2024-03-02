@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,14 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth'])->name('dashboard');
+
+
+
+Route::controller(AuthenticatedSessionController::class)->group(function(){
+    Route::get('logout','destroy')->name('logout');
+});
+
+
+
 
 require __DIR__.'/auth.php';

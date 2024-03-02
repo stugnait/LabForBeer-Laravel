@@ -12,12 +12,11 @@
 
         <!-- Scripts -->
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
-        <script src="{{asset('js/app.js')}}"></script>
-        <script src="{{asset('js/bootstrap.js')}}"></script>
-    </head>
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body>
-        <div class="font-sans text-gray-900 antialiased">
+        <div class="font-sans text-gray-900 antialiased" style="background-image: url({{asset('media/backgrounds/white-background.png')}});">
             {{ $slot }}
         </div>
     </body>

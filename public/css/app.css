@@ -961,6 +961,15 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
+.white-text-background{
+    width: 100%;
+    background: url("../media/backgrounds/white-background.png") no-repeat 50% 50%;
+    height: 930px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+}
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));

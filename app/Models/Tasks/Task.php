@@ -1,31 +1,28 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Tasks;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class Task extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'name',
-        'email',
-        'password',
+        'description',
+        'deadline',
+        'client_id',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'price',
     ];
 
     protected $hidden = [
-        'password',
-        'remember_token',
+
     ];
 
     protected $casts = [

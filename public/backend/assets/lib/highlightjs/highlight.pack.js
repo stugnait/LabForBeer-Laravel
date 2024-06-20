@@ -812,7 +812,7 @@ hljs.registerLanguage('1c', function(hljs){
 
   // общий паттерн для определения идентификаторов
   var UNDERSCORE_IDENT_RE = '[A-Za-zА-Яа-яёЁ_][A-Za-zА-Яа-яёЁ_0-9]+';
-  
+
   // v7 уникальные ключевые слова, отсутствующие в v8 ==> keyword
   var v7_keywords =
   'далее ';
@@ -824,7 +824,7 @@ hljs.registerLanguage('1c', function(hljs){
 
   // keyword : ключевые слова
   var KEYWORD = v7_keywords + v8_keywords;
-  
+
   // v7 уникальные директивы, отсутствующие в v8 ==> meta-keyword
   var v7_meta_keywords =
   'загрузитьизфайла ';
@@ -841,7 +841,7 @@ hljs.registerLanguage('1c', function(hljs){
   // v7 системные константы ==> built_in
   var v7_system_constants =
   'разделительстраниц разделительстрок символтабуляции ';
-  
+
   // v7 уникальные методы глобального контекста, отсутствующие в v8 ==> built_in
   var v7_global_context_methods =
   'ansitooem oemtoansi ввестивидсубконто ввестиперечисление ввестипериод ввестиплансчетов выбранныйплансчетов ' +
@@ -855,7 +855,7 @@ hljs.registerLanguage('1c', function(hljs){
   'префиксавтонумерации пропись пустоезначение разм разобратьпозициюдокумента рассчитатьрегистрына ' +
   'рассчитатьрегистрыпо симв создатьобъект статусвозврата стрколичествострок сформироватьпозициюдокумента ' +
   'счетпокоду текущеевремя типзначения типзначениястр установитьтана установитьтапо фиксшаблон шаблон ';
-  
+
   // v8 методы глобального контекста ==> built_in
   var v8_global_context_methods =
   'acos asin atan base64значение base64строка cos exp log log10 pow sin sqrt tan xmlзначение xmlстрока ' +
@@ -950,7 +950,7 @@ hljs.registerLanguage('1c', function(hljs){
   v7_system_constants +
   v7_global_context_methods + v8_global_context_methods +
   v8_global_context_property;
-  
+
   // v8 системные наборы значений ==> class
   var v8_system_sets_of_values =
   'webцвета windowsцвета windowsшрифты библиотекакартинок рамкистиля символы цветастиля шрифтыстиля ';
@@ -1102,7 +1102,7 @@ hljs.registerLanguage('1c', function(hljs){
   'кодировкаименфайловвzipфайле методсжатияzip методшифрованияzip режимвосстановленияпутейфайловzip режимобработкиподкаталоговzip ' +
   'режимсохраненияпутейzip уровеньсжатияzip ';
 
-  // v8 системные перечисления - 
+  // v8 системные перечисления -
   // Блокировка данных, Фоновые задания, Автоматизированное тестирование,
   // Доставляемые уведомления, Встроенные покупки, Интернет, Работа с двоичными данными ==> class
   var v8_system_enums_other =
@@ -1221,7 +1221,7 @@ hljs.registerLanguage('1c', function(hljs){
 
   // literal : примитивные типы
   var LITERAL = 'null истина ложь неопределено';
-  
+
   // number : числа
   var NUMBERS = hljs.inherit(hljs.NUMBER_MODE);
 
@@ -1242,10 +1242,10 @@ hljs.registerLanguage('1c', function(hljs){
       }
     ]
   };
-  
+
   // comment : комментарии
   var COMMENTS = hljs.inherit(hljs.C_LINE_COMMENT_MODE);
-  
+
   // meta : инструкции препроцессора, директивы компиляции
   var META = {
     className: 'meta',
@@ -1256,13 +1256,13 @@ hljs.registerLanguage('1c', function(hljs){
       COMMENTS
     ]
   };
-  
+
   // symbol : метка goto
   var SYMBOL = {
     className: 'symbol',
     begin: '~', end: ';|:', excludeEnd: true
-  };  
-  
+  };
+
   // function : объявление процедур и функций
   var FUNCTION = {
     className: 'function',
@@ -1314,7 +1314,7 @@ hljs.registerLanguage('1c', function(hljs){
       NUMBERS,
       STRINGS,
       DATE
-    ]  
+    ]
   }
 });
 
@@ -1999,7 +1999,7 @@ hljs.registerLanguage('arduino', function(hljs) {
         'Console GSMBand Esplora Stepper Process ' +
         'WiFiUDP GSM_SMS Mailbox USBHost Firmata PImage ' +
         'Client Server GSMPIN FileIO Bridge Serial ' +
-        'EEPROM Stream Mouse Audio Servo File Task ' +
+        'EEPROM Stream Mouse Audio Servo File Tasks ' +
         'GPRS WiFi Wire TFT GSM SPI SD ' +
         'runShellCommandAsynchronously analogWriteResolution ' +
         'retrieveCallingNumber printFirmwareVersion ' +
@@ -2647,7 +2647,7 @@ hljs.registerLanguage('autohotkey', function(hljs) {
         //I don't really know if this is totally relevant
       },
       {
-        className: 'meta', 
+        className: 'meta',
         begin: '^\\s*#\w+', end:'$',
         relevance: 0
       },
@@ -4321,7 +4321,7 @@ hljs.registerLanguage('csp', function(hljs) {
     keywords: {
       keyword: 'base-uri child-src connect-src default-src font-src form-action' +
         ' frame-ancestors frame-src img-src media-src object-src plugin-types' +
-        ' report-uri sandbox script-src style-src', 
+        ' report-uri sandbox script-src style-src',
     },
     contains: [
     {
@@ -5996,7 +5996,7 @@ hljs.registerLanguage('excel', function(hljs) {
     },
     contains: [
       {
-        /* matches a beginning equal sign found in Excel formula examples */ 
+        /* matches a beginning equal sign found in Excel formula examples */
         begin: /^=/,
         end: /[^=]/, returnEnd: true, illegal: /=/, /* only allow single equal sign at front of line */
         relevance: 10
@@ -8308,7 +8308,7 @@ hljs.registerLanguage('julia', function(hljs) {
       'RowVector SSAValue SegmentationFault SerializationState Set SharedArray SharedMatrix SharedVector Signed ' +
       'SimpleVector Slot SlotNumber SparseMatrixCSC SparseVector StackFrame StackOverflowError StackTrace StepRange ' +
       'StepRangeLen StridedArray StridedMatrix StridedVecOrMat StridedVector String SubArray SubString SymTridiagonal ' +
-      'Symbol Symmetric SystemError TCPSocket Task Text TextDisplay Timer Tridiagonal Tuple Type TypeError TypeMapEntry ' +
+      'Symbol Symmetric SystemError TCPSocket Tasks Text TextDisplay Timer Tridiagonal Tuple Type TypeError TypeMapEntry ' +
       'TypeMapLevel TypeName TypeVar TypedSlot UDPSocket UInt UInt128 UInt16 UInt32 UInt64 UInt8 UndefRefError UndefVarError ' +
       'UnicodeError UniformScaling Union UnionAll UnitRange Unsigned UpperTriangular Val Vararg VecElement VecOrMat Vector ' +
       'VersionNumber Void WeakKeyDict WeakRef WorkerConfig WorkerPool '
@@ -12046,7 +12046,7 @@ hljs.registerLanguage('powershell', function(hljs) {
   var PS_HELPTAGS = {
     className: 'doctag',
     variants: [
-      /* no paramater help tags */ 
+      /* no paramater help tags */
       { begin: /\.(synopsis|description|example|inputs|outputs|notes|link|component|role|functionality)/ },
       /* one parameter help tags */
       { begin: /\.(parameter|forwardhelptargetname|forwardhelpcategory|remotehelprunspace|externalhelp)\s+\S+/ }
@@ -12958,7 +12958,7 @@ function(hljs) {
   // ToDo: var PARAMETERS_PRINT = 'append as-value brief detail count-only file follow follow-only from interval terse value-list without-paging where info';
   // ToDo: var OPERATORS = '&& and ! not || or in ~ ^ & << >> + - * /';
   // ToDo: var TYPES = 'num number bool boolean str string ip ip6-prefix id time array';
-  // ToDo: The following tokens serve as delimiters in the grammar: ()  []  {}  :   ;   $   / 
+  // ToDo: The following tokens serve as delimiters in the grammar: ()  []  {}  :   ;   $   /
 
   var VAR_PREFIX = 'global local set for foreach';
 
@@ -12969,7 +12969,7 @@ function(hljs) {
       {begin: /\$\{(.*?)}/}
     ]
   };
-  
+
   var QUOTE_STRING = {
     className: 'string',
     begin: /"/, end: /"/,
@@ -12983,12 +12983,12 @@ function(hljs) {
       }
     ]
   };
-  
+
   var APOS_STRING = {
     className: 'string',
     begin: /'/, end: /'/
   };
-  
+
   var IPADDR = '((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\b';
   var IPADDR_wBITMASK =  IPADDR+'/(3[0-2]|[1-2][0-9]|\\d)';
   //////////////////////////////////////////////////////////////////////
@@ -13012,7 +13012,7 @@ function(hljs) {
           { begin: /^\[\</, end: /\>\]$/, },        // F# class declaration?
           { begin: /<\//, end: />/, },              // HTML tags
           { begin: /^facet /, end: /\}/, },         // roboconf - лютый костыль )))
-          { begin: '^1\\.\\.(\\d+)$', end: /$/, },  // tap  
+          { begin: '^1\\.\\.(\\d+)$', end: /$/, },  // tap
         ],
         illegal: /./,
       },
@@ -13021,7 +13021,7 @@ function(hljs) {
       APOS_STRING,
       VAR,
       { // attribute=value
-        begin: /[\w-]+\=([^\s\{\}\[\]\(\)]+)/, 
+        begin: /[\w-]+\=([^\s\{\}\[\]\(\)]+)/,
         relevance: 0,
         returnBegin: true,
         contains: [
@@ -13030,7 +13030,7 @@ function(hljs) {
             begin: /[^=]+/
           },
           {
-            begin: /=/, 
+            begin: /=/,
             endsWithParent:  true,
             relevance: 0,
             contains: [
@@ -13057,7 +13057,7 @@ function(hljs) {
               }, //*/
               {
                 // Не форматировать не классифицированные значения. Необходимо для исключения подсветки значений как built_in.
-                // className: 'number',  
+                // className: 'number',
                 begin: /("[^"]*"|[^\s\{\}\[\]]+)/,
               }, //*/
             ]
@@ -13070,7 +13070,7 @@ function(hljs) {
         begin: /\*[0-9a-fA-F]+/,
       }, //*/
 
-      { 
+      {
         begin: '\\b(' + COMMON_COMMANDS.split(' ').join('|') + ')([\\s\[\(]|\])',
         returnBegin: true,
         contains: [
@@ -13078,10 +13078,10 @@ function(hljs) {
             className: 'builtin-name', //'function',
             begin: /\w+/,
           },
-        ],  
+        ],
       },
-      
-      { 
+
+      {
         className: 'built_in',
         variants: [
           {begin: '(\\.\\./|/|\\s)((' + OBJECTS.split(' ').join('|') + ');?\\s)+',relevance: 10,},

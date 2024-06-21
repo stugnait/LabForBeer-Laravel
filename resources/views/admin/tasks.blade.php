@@ -22,6 +22,7 @@
                                 <th>Employee ID</th>
                                 <th>Client ID</th>
                                 <th>Deadline</th>
+                                <th>Status</th>
                                 <th>Created At</th>
                                 <th>Updated At</th>
                             </tr>
@@ -36,6 +37,7 @@
                                     <td>{{ $task->employee_id}}</td>
                                     <td>{{ $task->client_id }}</td>
                                     <td>{{ $task->deadline }}</td>
+                                    <td>{{ $task->status }}</td>
                                     <td>{{ $task->created_at}}</td>
                                     <td>{{ $task->updated_at }}</td>
                                 </tr>

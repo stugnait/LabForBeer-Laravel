@@ -28,5 +28,8 @@ Route::controller(TaskController::class)->group(function () {
     Route::get('tasks/progress', 'loadProgress')->name('tasks.progress');
     Route::get('tasks/done', 'loadProgress')->name('tasks.done');
     Route::get('tasks/cancelled', 'loadCancelled')->name('tasks.cancelled');
+    Route::get('tasks/{task}', 'show')->name('tasks.show');
+
+
 });
 require __DIR__ . '/auth.php';

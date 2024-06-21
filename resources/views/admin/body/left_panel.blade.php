@@ -10,16 +10,22 @@
 
     <label class="sidebar-label">Navigation</label>
     <div class="sl-sideleft-menu">
-        <a href="{{route('dashboard')}}" class="sl-menu-link active">
+        <a href="{{route('dashboard')}}" class="sl-menu-link ">
             <div class="sl-menu-item">
                 <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
                 <span class="menu-item-label">Dashboard</span>
             </div>
         </a>
+        <a href="{{route('tasks.create')}}" class="sl-menu-link">
+            <div class="sl-menu-item">
+                <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
+                <span class="menu-item-label"> Create Task</span>
+            </div>
+        </a>
         <a href="#" class="sl-menu-link">
             <div class="sl-menu-item">
                 <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
-                <span class="menu-item-label">Tasks</span>
+                <span class="menu-item-label"> Current Tasks</span>
                 <i class="menu-item-arrow fa fa-angle-down"></i>
             </div>
         </a>

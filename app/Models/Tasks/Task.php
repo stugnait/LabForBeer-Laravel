@@ -7,25 +7,24 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * @method static find($id)
+ */
 class Task extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $fillable = [
+    public $fillable = [
         'name',
         'description',
         'deadline',
         'client_id',
-        'created_at' => 'datetime',
-        'updated_at' => 'datetime',
+        'created_at' => 'timestamp',
+        'updated_at' => 'timestamp',
         'price',
     ];
 
     protected $hidden = [
 
-    ];
-
-    protected $casts = [
-        'email_verified_at' => 'datetime',
     ];
 }

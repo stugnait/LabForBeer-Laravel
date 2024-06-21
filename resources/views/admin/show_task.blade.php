@@ -18,16 +18,18 @@
                             <p class="card-text"><strong>Deadline:</strong> {{ $task->deadline }}</p>
                             <p class="card-text"><strong>Status:</strong>
                                 <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="statusDropdown"
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="statusDropdown{{ $task->id }}"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         {{ $task->status }}
                                     </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">New</a>
-                                        <a class="dropdown-item" href="#">Progress</a>
-                                        <a class="dropdown-item" href="#">*Done</a>
-                                        <a class="dropdown-item" href="#">Cancelled</a>
+                                    <div class="dropdown-menu" aria-labelledby="statusDropdown{{ $task->id }}">
+                                        <a class="dropdown-item" href="#" onclick="updateStatus({{ $task->id }}, 'new')">New</a>
+                                        <a class="dropdown-item" href="#" onclick="updateStatus({{ $task->id }}, 'progress')">Progress</a>
+                                        <a class="dropdown-item" href="#" onclick="updateStatus({{ $task->id }}, 'done')">Done</a>
+                                        <a class="dropdown-item" href="#" onclick="updateStatus({{ $task->id }}, 'cancelled')">Cancelled</a>
                                     </div>
+                                </div>
                                 </div>
                             <p class="card-text"><strong>Created At:</strong> {{ $task->created_at }}</p>
                             <p class="card-text"><strong>Updated At:</strong> {{ $task->updated_at }}</p>
@@ -56,6 +58,22 @@
     </div>
 
     <script>
-
+        function updateStatus(taskId, status) {
+            $.ajax({
+                url: '/tasks/' + taskId + '/update-status',
+                method: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    status: status
+                },
+                success: function(response) {
+                    console.log(response); // Виводимо відповідь сервера в консоль
+                    location.reload(); // Оновлюємо сторінку після успішного оновлення статусу
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText); // Виводимо помилку в консоль
+                }
+            });
+        }
     </script>
 @endsection

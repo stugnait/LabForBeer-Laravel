@@ -9,7 +9,7 @@ class CancelledTask extends Task
 {
     protected $table = 'cancelled_tasks';
 
-    protected $fillable = [
+    public $fillable = [
         'cancel_reason',
         'cancelled_at'=>'datetime',
     ];

@@ -30,8 +30,13 @@
                             <tbody>
                             @foreach($tasks as $task)
                                 <tr>
-                                    <td>{{ $task->id }}</td>
-                                    <td>{{ $task->name}}</td>
+                                    <td>
+                                        <a href="{{route('tasks.show',$task->id)}}">{{ $task->id }}</a>
+                                    </td>
+                                    <td>
+
+                                        <a href="{{route('tasks.show',$task->id)}}">{{ $task->name}}</a>
+                                    </td>
                                     <td>{{ $task->description }}</td>
                                     <td>{{ $task->price }} UAH</td>
                                     <td>{{ $task->employee_id}}</td>

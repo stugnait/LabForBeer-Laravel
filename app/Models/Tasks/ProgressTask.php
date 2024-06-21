@@ -11,7 +11,7 @@ class ProgressTask extends Task
 {
     protected $table = 'progress_tasks';
 
-    protected $fillable = [
+    public $fillable = [
         'employee_id',
         'take_at'
     ];

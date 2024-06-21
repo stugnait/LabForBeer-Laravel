@@ -6,7 +6,7 @@ class DoneTask extends ProgressTask
 {
     protected $table = 'done_tasks';
 
-    protected $fillable = [
+    public $fillable = [
         'done_at'=>'datetime',
         'rating',
 

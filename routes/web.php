@@ -29,7 +29,8 @@ Route::controller(TaskController::class)->group(function () {
     Route::get('tasks/done', 'loadProgress')->name('tasks.done');
     Route::get('tasks/cancelled', 'loadCancelled')->name('tasks.cancelled');
     Route::get('tasks/{task}', 'show')->name('tasks.show');
-
-
+    Route::post('/tasks/{task}/update-status','updateStatus')->name('tasks.update-status');
+    Route::get('/admin/tasks/create', 'create')->name('tasks.create');
+    Route::post('/admin/tasks', 'storeNewTask')->name('tasks.store');
 });
 require __DIR__ . '/auth.php';
